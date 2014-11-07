@@ -1,16 +1,11 @@
-from math import sqrt
+from itertools import islice
+from utils import primes
 
-def is_prime(n):
-    for i in range(2, int(sqrt(n)) + 1):
-        if n % i == 0:
-            return False
-    return True
+# https://docs.python.org/2/library/itertools.html#recipes
+def nth(iterable, n, default=None):
+    "Returns the nth item or a default value"
+    return next(islice(iterable, n, None), default)
 
-primes_found = 0
-n = 1
-while primes_found != 10001:
-    n += 1
-    if is_prime(n):
-        primes_found += 1
-    
+n = nth(primes(), 10000)
+
 print(n)

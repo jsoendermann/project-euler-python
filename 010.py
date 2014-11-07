@@ -15,7 +15,4 @@ while n < sqrt(two_million):
         m += 1
     n += 1
 
-#for i, t in enumerate(sieve):
-    #print(i, t)
-
 print(sum([n for n in range(2, two_million) if sieve[n]]))
