@@ -1,4 +1,3 @@
-p = 2**1000
-s = str(p)
-l = map(int, s)
-print(sum(l))
+from utils import sum_of_digits
+
+print(sum_of_digits(2**1000))
